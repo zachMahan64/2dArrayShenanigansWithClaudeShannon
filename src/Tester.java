@@ -1,4 +1,4 @@
-//Zach Mahan, 20250424, Purpose: prototype for 2D array game
+//Zach Mahan, Date: 20250430, Purpose: Make a 2D array game
 
 import java.util.*;
 
