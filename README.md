@@ -1,2 +1,3 @@
 -Simple game revolving around 2D arrays made for ICS
--Images may not render correctly on Windows devices due to how the terminal handle special characters, however, it should render fine on Linux and MacOS
+-Images may not render perfectly on Windows devices due to how the terminal handles the spacing of special characters
+-Images will render fine on macOS & Linux
