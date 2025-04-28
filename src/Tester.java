@@ -291,7 +291,7 @@ public class Tester {
     public static int getAIChoice(int[][] gameArr) throws InterruptedException {
         Random rand = new Random();
         int AIChoice = -1;
-        int highestRating = 0;
+        int highestRating = Integer.MIN_VALUE;
 
         printClaudeShannonThinking();
         Thread.sleep(2000);
@@ -322,7 +322,6 @@ public class Tester {
     }
     public static int rateChoice(int[][] gameArr, int choiceToTest) {
         int score = 0;
-
         int[][] testArr = cloneArr(gameArr);
         int startingNumSpots = 0;
         for (int[] row : gameArr) {
@@ -341,15 +340,13 @@ public class Tester {
                 }
             }
         }
+        //score for most moves --> Mr. Shannon takes on an aggressive playstyle where he clears as many squares as fast as he can:
         score = startingNumSpots - numSpotsLeft;
-        if (numSpotsLeft == 0) {
-        score = -2;
-        }
-        else if (numSpotsLeft == 2 || numSpotsLeft == 3) {
-            score = -1;
-        } if (numSpotsLeft == 4) {
-            score = 0;
-        }
+        //score overrides for tricky situations:
+        if (numSpotsLeft == 0) score = -3;
+        else if (numSpotsLeft == 2) score = -2;
+        else if (numSpotsLeft == 3) score = -1;
+        else if (numSpotsLeft == 4) score = 0;
         return score;
     }
     //misc
