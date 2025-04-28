@@ -342,10 +342,13 @@ public class Tester {
             }
         }
         score = startingNumSpots - numSpotsLeft;
-        if (numSpotsLeft >= 2 && numSpotsLeft <= 4) {
-            score = 0;
-        } else if (numSpotsLeft == 0) {
+        if (numSpotsLeft == 0) {
+        score = -2;
+        }
+        else if (numSpotsLeft == 2 || numSpotsLeft == 3) {
             score = -1;
+        } if (numSpotsLeft == 4) {
+            score = 0;
         }
         return score;
     }
